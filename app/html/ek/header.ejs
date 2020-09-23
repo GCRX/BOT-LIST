@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+ 
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700&amp;subset=latin-ext" rel="stylesheet">
+  <link href="https://bootswatch.com/4/cyborg/bootstrap.min.css" rel="stylesheet" />
+  
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/v/bs4/dt-1.10.16/cr-1.4.1/r-2.2.0/datatables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js" integrity="sha256-zG8v+NWiZxmjNi+CvUYnZwKtHzFtdO8cAKUIdB8+U9I="
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  
+  <link rel="stylesheet" href="/css/genel.css" />
+
+	<link rel="icon" href="https://cdn.discordapp.com/attachments/737754906605387887/737969623034626119/PSX_20200525_131724.jpg">
+	<title>GÇRX Bot List</title>
+  <style>
+    .cities {
+    background-color: "#FF3000";
+    color: white;
+    margin: 20px;
+    padding: 20px;
+    } 
+		.navigation ul {
+			list-style-type: none;
+		}
+		.navigation ul a {
+			text-decoration: none;
+		}
+		.navigation ul li a {
+			display: block;
+		}
+		.navigation ul li {
+			float:left;
+			width:150px;
+			padding:8px;
+			background: white;
+			border-radius: 42px;
+			margin-right:8px;
+			color: white;
+			text-align: center;
+		}
+		.navigation ul li:hover {
+			background: Bisque;
+			border-radius: 0px;
+			transition-duration: 1.5s;
+		}
+		.navigation li ul {
+			display:none;
+			position:absolute;
+		}
+		.navigation li:hover ul {
+			display:block;
+			margin-top:9px;
+			margin-left:-49px;
+		}
+		.navigation li ul li {
+			clear:both;
+			display : block;
+			border-radius: 0px;
+			padding: 3px;
+			cursor: pointer;
+		}
+		.navigation li ul li a {
+			display: block;
+		}
+		.basarili {
+			background:url(http://4.bp.blogspot.com/-jeu83lGlWHs/T5uOBF3BUmI/AAAAAAAACn4/NbgkRV3RqNM/s1600/buton-sprite.png) #eefec2 no-repeat left;
+			background-position: left -11px;
+			height:60px;
+			line-height:60px;
+			padding:0 0 0 60px;
+			margin:0 0 10px 0;
+			border:1px solid #badc5d;
+			-webkit-border-radius: 3px;  
+			-moz-border-radius: 3px;  
+			border-radius: 3px;
+		}
+		.hata {
+			background:url(http://4.bp.blogspot.com/-jeu83lGlWHs/T5uOBF3BUmI/AAAAAAAACn4/NbgkRV3RqNM/s1600/buton-sprite.png) #ffe59d no-repeat left;
+			background-position: left -11px;
+			height:60px;
+			line-height:60px;
+			padding:0 0 0 60px;
+			margin:0 0 10px 0;
+			border:1px solid #c8b26f;
+			-webkit-border-radius: 3px;  
+			-moz-border-radius: 3px;  
+			border-radius: 3px;
+		}
+    .x a {
+      color:#999;
+    }
+    .x a:hover {
+      color:#fff;
+      background-color:transparent;
+    }
+	</style>
+  <script type="text/javascript">
+			function myFunction() {
+				var x = document.getElementById("myTopnav");
+				if (x.className === "topnav") {
+					x.className += " responsive";
+				} else {
+					x.className = "topnav";
+				}
+			}
+</script>
+</head>
+
+
+<nav class="site-header sticky-top py-1">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2" href="https://gcrx-botlist.glitch.me">
+          <img src="https://cdn.discordapp.com/attachments/737754906605387887/737969623034626119/PSX_20200525_131724.jpg" style="width:20px;height:20px;" >
+        </a>
+        <a class="py-2 d-none d-md-inline-block" href="https://gcrx-botlist.glitch.me">Anasayfa</a>
+        <a class="py-2 d-none d-md-inline-block" href="/botlar">Botlar</a>
+        <a class="py-2 d-none d-md-inline-block" href="/botekle">Bot Ekle</a>
+        <a class="py-2 d-done d-md-inline-block" href="/sertifika">Sertifika</a>
+        <a class="py-2 d-none d-md-inline-block" href="/hakkımızda">Hakkımızda</a>
+        <a class="py-2 d-none d-md-inline-block" href="https://discord.gg/wUeFFTj">Discord</a>
+
+      </div>
+    </nav>
+  
+  
+  
+
+  
+<style>
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+  .site-header {
+    background: rgba(0,0,0,0.30);
+  }
+  
+  .site-header a{
+    color:#fff;
+    text-decoration:none;
+    padding:60px;
+    margin-top:10px;
+    margin-bottom:10px;
+    transition: 0.7s;
+  }
+  
+  .site-header a:hover{
+  color:#f1f1f1;
+    text-decoration:none;
+    padding:60px;
+    background: rgba(0,0,0,0.50)
+  }
+  
+.headers{
+  
+  margin: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+  color: #fff;
+  
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+  font-family: sans-serif;
+    background: linear-gradient(270deg, #10c800, #0063c8, #b800c8);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+
+}
+  .content p{
+  width: 700px;
+  line-height: 26px;
+  font-size: 18px;
+  text-align: justify;
+}
+
+.cursor{
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #c6c6c6;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: .1s;
+}
+
+.cursor2{
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: #c6c6c6;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: .15s;
+}
+
+.content:hover ~ .cursor{
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: #c6c6c6;
+  opacity: .5;
+}
+
+.content:hover ~ .cursor2{
+  opacity: 0;
+}
+
+
+@media (max-height: 500px){
+  .social_media{
+    display: none !important;
+  }
+}
+
+</style>
+  <div class="container">
+    

@@ -1,0 +1,98 @@
+<%- include('ek/header', {bot, user, path}) %>
+<div class="info">
+<div class="container">
+  	
+    </div>
+   <div class="container">
+    
+     
+     
+<div class="container" style="padding: 10px;">
+	 <div class="jumbotron" style="border-radius: 25px;">
+     <div class="background" style="background: rgba(0, 0, 0, 0.4);"
+		<div align="center">
+			<img src="https://cdn.discordapp.com/attachments/737754906605387887/737969623034626119/PSX_20200525_131724.jpg" width="180px" height="180px" class="d-inline-block align-top rounded-circle" alt=""><br><br>
+      <h3><b><font color="#00000">GÇRX BOT List</font></b></h3>
+					<p style="font-size:15px; color:lightgrey">Discord Botlarının Toplandığı Aynı Zamandada Reklamlarının Yapıldığı GÇRX Bot List Sistemi! <br>Hızla geliştirilen botlarınızı barındırabileceğiniz güvenlikli bir sistem.</p><br>
+  </div>
+    </div>
+  <h4 align="center" style="color:#000000;margin-top:-100px;">
+    <strong>Sertifikalı Botlar
+    </strong></h4>
+<br>
+    <div class="row">
+  
+   <% if (bot.ayar.has('botlar')) { %>
+  <% const sorted = Object.keys(bot.ayar.fetch('botlar')).sort((a, b) => { return (bot.ayar.fetch(`botlar.${b}.oy`) || 0) - (bot.ayar.fetch(`botlar.${a}.oy`) || 0) }) %>
+  <% const top = sorted.splice(0, Object.keys(bot.ayar.fetch('botlar')).length) %>
+  <% const map = top.map(x=>x) %>
+	<% for(var i = 0; i < Object.keys(bot.ayar.fetch('botlar')).length; i++) { %>
+  <% let idd = map[i] %>
+   <% if(bot.ayar.has(`botlar.${idd}.durum`) === true) { %>
+		<% if (bot.ayar.fetch(`botlar.${idd}.durum`) === "Onaylı") { %>
+    <% if (bot.ayar.has(`botlar.${idd}.sertifika`) === true) { %>
+    <div class="col-12 col-sm-6 col-md-4">
+        <div class="card card-lg botcard" style="width:14rem;height:16rem;background:#2a6bd8;">
+    <div value="<%=bot.useful.seg(bot.ayar.fetch(`botlar.${idd}.isim`), 5)%>" align="center" class="card-img">
+  
+            <a name="aramaResim" id="aramaResim" href="/bot/<%=idd%>" style="color:#fff"><img  src="<%=bot.ayar.fetch(`botlar.${idd}.avatar`)%>" style="width:50%;margin:5px;border-radius:50%;" <%=bot.useful.seg(bot.ayar.fetch(`botlar.${idd}.isim`), 5)%></a>
+    
+          <% if(bot.ayar.has(`botlar.${idd}.sertifika`) === true) { %>
+       
+            <img src="https://cdn3.iconfinder.com/data/icons/study-education-9/96/success_medal_done-512.png" width="30px" height="30px">
+       <% } %>
+       <div class="badge badge-primary"><strong style='color: white;'>Oy: </strong><span style='color:whitesmoke;text-transform: none;'><%=bot.ayar.fetch(`botlar.${idd}.oy`)||0%></span></div>
+                     
+          </div>
+      <div align="center" class="card-body">
+                               <div class="card-title">
+                                      <h5><a style="color:#000000;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width:50px;"><%=bot.useful.seg(bot.ayar.fetch(`botlar.${idd}.isim`), 5)%></a></h5>
+                                     <%if (bot.users.get(idd)){%>
+						<% if (bot.users.get(idd).presence.status === 'online') {%>
+			<div class="counts" id="status-idle" ><div style="padding:5px;" class="badge badge-success">Çevrimiçi</div></div>
+						<%} else if(bot.users.get(idd).presence.status === 'offline'){%>
+			<div class="counts" id="status-dnd" ><div style="padding:5px;" class="badge badge-secondary">Görünmez</div></div>
+						<%}else if (bot.users.get(idd).presence.status === 'dnd'){%>
+				<div class="counts" id="status-idle"><div style="padding:5px;" class="badge badge-danger">Rahatsız Etmeyin</div></div>
+						<%}else if(bot.users.get(idd).presence.status === 'idle'){%>
+						<div class="counts" id="status-idle"><div style="padding:5px;color:#000000;" class="badge badge-warning">Boşta</div></div>
+						<%} %>  
+        <% } else { %>
+						<div " style="font-size:15px; color:#000000; class="counts">Bot Kapalı</div>
+        <% } %>
+                                </div>         
+                              <h6 align="center"><a href="/bot/<%=idd%>" style="font-size:15px; color:#000000;">Görüntüle</a>
+                            </div>
+                       </div><br>
+    </div>
+      <% } %>
+    <% } %>
+     <% } %>
+   <% } %>
+   <% } else {%>
+   <center><h5 style="color:#red">
+     Sistemde hiç bot bulunmuyor.
+     </h5></center>
+   <% } %>
+   </div></div></div></div>
+       <div class="cursor"></div>
+  <div class="cursor2"></div>
+
+  <script>
+    var cursor = document.querySelector(".cursor");
+    var cursor2 = document.querySelector(".cursor2");
+    document.addEventListener("mousemove",function(e){
+      cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+    });
+  </script>
+
+<style>
+
+  .jumbotron {
+    background:transparent;
+  }
+  .row {
+    background: #fffff;
+    padding: 15px;
+  }
+</style>
